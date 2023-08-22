@@ -9,15 +9,21 @@
 */
 
 const http = require("http"); // nodejs inbuilt package
+const myModules = require("./myCustomModule");
 
 http
   .createServer((req, res) => {
     res.writeHead(200, { "content-type": "text/html" }); //html tag
-    res.write("<h1>Hello World, NaBiN</h1>"); //Body
+    const date = myModules.myDate();
+    const myTime = myModules.myTime();
+
+    res.write(
+      "<h1>Hello World, NaBiN</h1><p>" + date + "</p><p>" + myTime + "</p>"
+    ); //Body
     res.end();
   })
-  .listen(3333);
+  .listen(4555);
 
-console.log("App is running on port 3333");
+console.log("App is running on port 4555");
 
 // localhost:5555 in Browser
