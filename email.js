@@ -19,11 +19,11 @@ Steps
    
    */
 
-const nodemailer = require("nodemailer");
+// const nodemailer = require("nodemailer");
 
-const transporter = nodemailer.createTransport({});
-transporter.verify((error, success) => {});
+// const transporter = nodemailer.createTransport({});
+// transporter.verify((error, success) => {});
 
-const main = async (messageOptions) => {};
+// const main = async (messageOptions) => {};
 
-const messageOptions = {};
+// const messageOptions = {};
