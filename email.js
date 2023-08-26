@@ -26,8 +26,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "nabinm784@gmail.com",
-    pass: "ymjefddzjnxpeaec",
+    user: "*********@gmail.com",
+    pass: "**************",
   },
 });
 
@@ -47,8 +47,8 @@ const main = async (messageOptions) => {
 };
 
 const messageOptions = {
-  from: '"Paraaa Boy"<nabinm784@gmail.com>', // sender address
-  to: "054093@gmail.com", // list of receivers
+  from: '"Tekendra Singh"<nabinm784@gmail.com>', // sender address
+  to: "singhrijan44@gmail.com", // list of receivers
   subject: "Hello ✔", // Subject line
   text: "Hello world?", // plain text body
   html: "<b>Hello Dhoti Whats up?</b>", // html body
