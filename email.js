@@ -19,15 +19,6 @@ Steps
    
    */
 
-// const nodemailer = require("nodemailer");
-
-// const transporter = nodemailer.createTransport({});
-// transporter.verify((error, success) => {});
-
-// const main = async (messageOptions) => {};
-
-// const messageOptions = {};
-
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
@@ -35,14 +26,13 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    // TODO: replace `user` and `pass` values from <https://forwardemail.net>
     user: "nabinm784@gmail.com",
     pass: "ymjefddzjnxpeaec",
   },
 });
 
 // verify connection configuration
-transporter.verify(function (error, success) {
+transporter.verify((error, success) => {
   if (error) {
     console.log(error);
   } else {
@@ -50,25 +40,18 @@ transporter.verify(function (error, success) {
   }
 });
 
-// async..await is not allowed in global scope, must use a wrapper
-async function main() {
-  // send mail with defined transport object
-  const info = await transporter.sendMail({
-    from: '"Fred Foo 👻" <foo@example.com>', // sender address
-    to: "nabinm784@gmail.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
-  });
+const main = async (messageOptions) => {
+  const info = await transporter.sendMail(messageOptions);
 
   console.log("Message sent: %s", info.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+};
 
-  //
-  // NOTE: You can go to https://forwardemail.net/my-account/emails to see your email delivery status and preview
-  //       Or you can use the "preview-email" npm package to preview emails locally in browsers and iOS Simulator
-  //       <https://github.com/forwardemail/preview-email>
-  //
-}
+const messageOptions = {
+  from: '"Paraaa Boy"<nabinm784@gmail.com>', // sender address
+  to: "054093@gmail.com", // list of receivers
+  subject: "Hello ✔", // Subject line
+  text: "Hello world?", // plain text body
+  html: "<b>Hello Dhoti Whats up?</b>", // html body
+};
 
-main().catch(console.error);
+main(messageOptions).catch(console.error);
