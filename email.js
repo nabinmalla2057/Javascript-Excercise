@@ -41,6 +41,15 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// verify connection configuration
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take our messages");
+  }
+});
+
 // async..await is not allowed in global scope, must use a wrapper
 async function main() {
   // send mail with defined transport object
